@@ -1,0 +1,27 @@
+﻿@model IEnumerable<UserDetails.Data.Collections.CollectionChildAadharCard>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@foreach(var item in Model)
+{ 
+    <tr>
+        <td>
+
+            @Html.DisplayFor(modelItem => item.Id)
+            <br />
+            @foreach (var test in item.tests)
+            {
+                @Html.DisplayFor(modelItem => test.TName)
+            }
+
+
+            <br />
+            @Html.DisplayFor(modelItem => item.CTestobj.CDescription)
+            <br />
+        </td>
+    </tr>
+}
+
